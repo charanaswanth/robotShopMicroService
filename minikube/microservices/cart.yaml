@@ -3,8 +3,8 @@ namespace: demoproject
 project: robotShop
 
 #application
-application: payment
-image: payment:1.0
+application: cart
+image: cart:1.0
 
 #resource
 replicaCount: 1
@@ -18,7 +18,7 @@ minimum:
 #networking
 service:
   ports:
-    - name: payment-port
+    - name: cart-port
       protocol: TCP
-      svcPort: 5555
-      containerPort: 0
+      svcPort: 8080
+      containerPort: 8080

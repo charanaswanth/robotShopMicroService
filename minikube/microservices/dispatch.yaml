@@ -3,8 +3,8 @@ namespace: demoproject
 project: robotShop
 
 #application
-application: web
-image: web:1.0
+application: dispatch
+image: dispatch:1.0
 
 #resource
 replicaCount: 1
@@ -18,7 +18,7 @@ minimum:
 #networking
 service:
   ports:
-    - name: web-port
+    - name: dispatch-port
       protocol: TCP
-      svcPort: 8080
-      containerPort: 8080
+      svcPort: 5555
+      containerPort: 5555

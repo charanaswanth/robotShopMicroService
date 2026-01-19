@@ -3,8 +3,8 @@ namespace: demoproject
 project: robotShop
 
 #application
-application: cart
-image: cart:1.0
+application: web
+image: web:1.0
 
 #resource
 replicaCount: 1
@@ -15,16 +15,11 @@ minimum:
   cpu: 100m
   memory: 50Mi
 
-#container
-container:
-  environment:
-    map:
-      check: value
-
 #networking
 service:
+  type: NodePort
   ports:
-    - name: cart-port
+    - name: web-port
       protocol: TCP
       svcPort: 8080
       containerPort: 8080
