@@ -1,0 +1,30 @@
+#project
+namespace: demoproject
+project: robotShop
+
+#application
+application: cart
+image: cart:1.0
+
+#resource
+replicaCount: 1
+maximum:
+  cpu: 200m
+  memory: 100Mi
+minimum:
+  cpu: 100m
+  memory: 50Mi
+
+#container
+container:
+  environment:
+    map:
+      check: value
+
+#networking
+service:
+  ports:
+    - name: cart-port
+      protocol: TCP
+      svcPort: 8080
+      containerPort: 8080
