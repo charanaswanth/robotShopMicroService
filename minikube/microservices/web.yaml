@@ -1,0 +1,25 @@
+#project
+namespace: demoproject
+project: robotShop
+
+#application
+application: web
+image: web:1.0
+
+#resource
+replicaCount: 1
+maximum:
+  cpu: 200m
+  memory: 100Mi
+minimum:
+  cpu: 100m
+  memory: 50Mi
+
+#networking
+service:
+  type: NodePort
+  ports:
+    - name: web-port
+      protocol: TCP
+      svcPort: 8080
+      containerPort: 8080

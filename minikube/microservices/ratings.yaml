@@ -1,0 +1,24 @@
+#project
+namespace: demoproject
+project: robotShop
+
+#application
+application: ratings
+image: ratings:1.0
+
+#resource
+replicaCount: 1
+maximum:
+  cpu: 200m
+  memory: 100Mi
+minimum:
+  cpu: 100m
+  memory: 50Mi
+
+#networking
+service:
+  ports:
+    - name: ratings-port
+      protocol: TCP
+      svcPort: 80
+      containerPort: 80
